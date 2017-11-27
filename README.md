@@ -1,6 +1,9 @@
-# Gender Classification Using Naive Bayes
+# Learning to Classify Text Using a Naïve Bayes Classifier
 
-One Paragraph of project description goes here
+The purpose of this project is to apply a known supervised classification
+technique for Natural Language Processing (NLP) problems. Specifically,
+the supervised classification technique used for this problem will be a 
+Naïve Bayes Classifier
 
 ### Installing
 
