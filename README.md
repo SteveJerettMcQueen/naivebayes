@@ -1,7 +1,7 @@
 # Learning to Classify Text Using a Naïve Bayes Classifier
 
 The purpose of this project is to apply a known supervised classification
-technique for Natural Language Processing (NLP) problems. Specifically,
+technique for Natural Language Processing problems. Specifically,
 the supervised classification technique used for this problem will be a 
 Naïve Bayes Classifier
 
