@@ -1,7 +1,4 @@
-import csv
 import email
-import collections
-import itertools
 
 import charac_feats as cf
 import word_feats as wf
