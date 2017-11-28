@@ -14,5 +14,16 @@ sudo apt-get update
 sudo apt-get install build-essential python3-dev python3-setuptools python3-numpy 
     python3-scipy python3-pip libatlas-dev libatlas3gf-base
 sudo pip3 install scikit-learn
+sudo pip3 install nltk
+
+```
+
+Open a python shell and download
+
+```
+nltk.download('averaged_perceptron_tagger')
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('tagsets')
 
 ```
