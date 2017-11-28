@@ -1,60 +1,35 @@
-import email
+import numpy as np
 
-import charac_feats as cf
-import word_feats as wf
-import syntac_feats  as syf
-import struct_feats as stf
-import funct_word_feats as fwf
-
-from nltk.corpus.reader.plaintext import PlaintextCorpusReader
+from sklearn import metrics
+from sklearn.naive_bayes import GaussianNB, BernoulliNB
+from sklearn.cross_validation import train_test_split
+from sklearn.metrics import confusion_matrix, classification_report
+from util import load_data
 
 ################################################################################
 
-def generate_feat_data(dir_array):
-    
-    data_list = []
-    labels = []
+dir_label = [
+    ['badeer-r', 1], ['benson-r', 1], ['blair-l', 0],
+    ['cash-m', 0], ['corman-s', 1], ['hain-m', 1]]
 
-    for direct in dir_array:
+dataset = load_data(dir_label)
 
-        data = []
-        
-        corpus_dir = 'dataset/' + direct
-        corpus = PlaintextCorpusReader(corpus_dir,'.*\.*')
-        file_ids = corpus.fileids()
-        
-        for file in file_ids[:3]:
-            
-            d = []
-            
-            raw_email = corpus.raw(file)
-            e = email.message_from_string(raw_email)
-            
-            if(e.is_multipart()):
-                for payload in e.get_payload:
-                    raw_email = payload.get_payload
-            else:
-                raw_email = e.get_payload()
+X = np.array(dataset[0])
+y = dataset[1]
+print("Data Set: ", len(X))
 
-            feats = [
-                cf.charac_feats_extractor(raw_email),
-                wf.word_feats_extractor(raw_email),
-                syf.syntac_feats_extractor(raw_email),
-                stf.struct_feats_extractor(corpus, file, raw_email),
-                fwf.funct_word_feats_extractor(raw_email)
-            ]
-    
-            for f in feats:
-                d.extend(list(f.values()))
-                
-            data.append(d)
-            labels.append(1)
-            
-        data_list.extend(data)
-        
-    return data_list
+# Sci-Kit Learn Naive Baye's Classifiers
+# Train/Test split model 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = .30, random_state = 50)
+print("X Tranining Set: ", len(X_train), "; X Test Set: ", len(X_test))
+print("Y Tranining Set: ", len(y_train), "; Y Test Set: ", len(y_test))
 
-male_dirs = ['badeer-r', 'benson-r']
-print(generate_feat_data(male_dirs))
-
+gauss = GaussianNB().fit(X_train, y_train)
+y_pred = gauss.predict(X_test)
+print("Gaussian Accuracy: ", "{0:.4f}".format(metrics.accuracy_score(y_test, y_pred)))
+print "Confusioin Matrix: "
+print metrics.confusion_matrix(y_test, y_pred)
+print "Classification Report: "
+print classification_report(y_test, y_pred)
+print("---------------------------------------------------------------------")
     
