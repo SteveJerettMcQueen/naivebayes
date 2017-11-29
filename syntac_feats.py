@@ -62,12 +62,12 @@ def syntac_feats_extractor(text):
     nqm = num_of_quest_marks(text)
     nem = num_of_excl_marks(text)
     
-    feats[0] = 1
-    feats[1] = 1 if (nc > .7) else 0
-    feats[2] = 1
-    feats[3] = 1
-    feats[4] = 1 if (nscln < .1) else 0
-    feats[5] = 1 if (nqm < .5) else 0
-    feats[6] = 1
+    feats[0] = 1 if (nsq > .0013) else 0
+    feats[1] = 1 if (nc < .0080) else 0
+    feats[2] = 1 if (np > .011) else 0
+    feats[3] = 1 if (ncln < .012) else 0
+    feats[4] = 1 if (nscln < .0017) else 0
+    feats[5] = 1 if (nqm > .0009) else 0
+    feats[6] = 1 if (nem > .00043) else 0
     
     return feats

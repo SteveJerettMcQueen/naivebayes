@@ -78,13 +78,13 @@ def struct_feats_extractor(corpus, fid, text):
     nsbu = num_of_sents_beg_upper_case(text)
     nsbl = num_of_sents_beg_lower_case(text)
     
-    feats[0] = 1
-    feats[1] = 1
-    feats[2] = 1 if (ansp > .5) else 0
-    feats[3] = 1 if (anwp > .5) else 0
-    feats[4] = 1 if (ancp > .5) else 0
-    feats[5] = 1 if (anws > .5) else 0
-    feats[6] = 1 if (nsbu > .5) else 0
-    feats[7] = 1 if (nsbl > .5) else 0
+    feats[0] = 1 if (ns > 13) else 0
+    feats[1] = 1 if (np < 9.7) else 0
+    feats[2] = 1 if (ansp > 1.2) else 0
+    feats[3] = 1 if (anwp > 30) else 0
+    feats[4] = 1 if (ancp > 185) else 0
+    feats[5] = 1 if (anws > 28) else 0
+    feats[6] = 1 if (nsbu < .84) else 0
+    feats[7] = 1 if (nsbl > .033) else 0
 
     return feats

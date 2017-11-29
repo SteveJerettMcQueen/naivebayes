@@ -66,10 +66,10 @@ def funct_word_feats_extractor(text):
     ncj = num_of_conj_words(text)
     nij = num_of_interj_words(text)
 
-    feats[0] = 1
-    feats[1] = 1
-    feats[2] = 1
-    feats[3] = 1
+    feats[0] = 1 if (npw < .031) else 0
+    feats[1] = 1 if (naw > .0115) else 0 
+    feats[2] = 1 if (ncj > .041) else 0
+    feats[3] = 1 if (nij > .00012) else 0
 
     return feats
     

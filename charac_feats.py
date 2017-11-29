@@ -90,10 +90,10 @@ def charac_feats_extractor(text):
     ndc = num_of_digit_chars(text)
     nwsc = num_of_white_space_chars(text)
     
-    feats[0] = 1 if (nc < .95) else 0
-    feats[1] = 1 if (nl < .9) else 0
-    feats[2] = 1 if (nup > .5) else 0
-    feats[3] = 1 if (ndc < .5) else 0
-    feats[4] = 1 if (nwsc > .3) else 0
+    feats[0] = 1 if (nc < 1630) else 0
+    feats[1] = 1 if (nl < .71) else 0
+    feats[2] = 1 if (nup < .046) else 0
+    feats[3] = 1 if (ndc < .038) else 0
+    feats[4] = 1 if (nwsc > .14) else 0
 
     return feats

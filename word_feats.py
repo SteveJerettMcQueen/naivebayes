@@ -60,10 +60,10 @@ def word_feats_extractor(text):
     alpw = avg_len_per_word(text), 
     vr = vocab_richness(text)
     
-    feats[0] = 1
-    feats[1] = 1 if (alpw > .5) else 0
-    feats[2] = 1 if (vr > .5) else 0
-    feats[3] = 1 if (nwlsc > .6) else 0
-    feats[4] = 1 if (nsw > .5) else 0
+    feats[0] = 1 if (nw > 310) else 0
+    feats[1] = 1 if (nsw > .215) else 0
+    feats[2] = 1 if (nwlsc < .19) else 0
+    feats[3] = 1 if (alpw > .822) else 0
+    feats[4] = 1 if (vr > .628) else 0
 
     return feats
