@@ -47,20 +47,21 @@ append_write = 'a' if(file_exists) else 'w'
 f = open(filename, append_write)
 
 # Write Data information
+f.write("---------------------------------------------------------------------\n")
 f.write("Date: " + str(dt.datetime.now().strftime("%m-%d-%Y")) + '\n')
 f.write("Data Set: " + str(len(X)) + "\n")
 f.write("X Tranining Set: " + str(len(X_train)) + " ; X Test Set: " + str(len(X_test)) + "\n")
 f.write("Y Tranining Set: " + str(len(y_train)) + " ; Y Test Set: " + str(len(y_test)) + "\n")
-f.write("---------------------------------------------------------------------\n")
+f.write("\n")
 
 # Write Gaussian metrics
 f.write("Gaussian Accuracy: " + "{0:.4f}".format(acc) + "\n")
 f.write("Confusioin Matrix: " + str(cfm.ravel()) + "\n")
 f.write("Classification Report:\n" + report + "\n")
-f.write("---------------------------------------------------------------------\n")
 
 # Write Bernoulli metrics
 f.write("Bernoulli Accuracy: " + "{0:.4f}".format(acc2) + "\n")
 f.write("Confusioin Matrix: " + str(cfm2.ravel()) + "\n")
 f.write("Classification Report:\n" + report2 + "\n")
+f.write("\n")
 f.close()

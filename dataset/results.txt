@@ -1,0 +1,104 @@
+---------------------------------------------------------------------
+Date: 11-29-2017
+Data Set: 600
+X Tranining Set: 420 ; X Test Set: 180
+Y Tranining Set: 420 ; Y Test Set: 180
+
+Gaussian Accuracy: 0.7000
+Confusioin Matrix: [ 24  36  18 102]
+Classification Report:
+             precision    recall  f1-score   support
+
+     Female       0.57      0.40      0.47        60
+       Male       0.74      0.85      0.79       120
+
+avg / total       0.68      0.70      0.68       180
+
+
+Bernoulli Accuracy: 0.7167
+Confusioin Matrix: [ 24  36  15 105]
+Classification Report:
+             precision    recall  f1-score   support
+
+     Female       0.62      0.40      0.48        60
+       Male       0.74      0.88      0.80       120
+
+avg / total       0.70      0.72      0.70       180
+
+---------------------------------------------------------------------
+Date: 11-29-2017
+Data Set: 3000
+X Tranining Set: 2100 ; X Test Set: 900
+Y Tranining Set: 2100 ; Y Test Set: 900
+
+Gaussian Accuracy: 0.7156
+Confusioin Matrix: [120 162  94 524]
+Classification Report:
+             precision    recall  f1-score   support
+
+     Female       0.56      0.43      0.48       282
+       Male       0.76      0.85      0.80       618
+
+avg / total       0.70      0.72      0.70       900
+
+Bernoulli Accuracy: 0.7344
+Confusioin Matrix: [119 163  76 542]
+Classification Report:
+             precision    recall  f1-score   support
+
+     Female       0.61      0.42      0.50       282
+       Male       0.77      0.88      0.82       618
+
+avg / total       0.72      0.73      0.72       900
+
+---------------------------------------------------------------------
+Date: 11-29-2017
+Data Set: 5767
+X Tranining Set: 4036 ; X Test Set: 1731
+Y Tranining Set: 4036 ; Y Test Set: 1731
+
+Gaussian Accuracy: 0.6852
+Confusioin Matrix: [248 342 203 938]
+Classification Report:
+             precision    recall  f1-score   support
+
+     Female       0.55      0.42      0.48       590
+       Male       0.73      0.82      0.77      1141
+
+avg / total       0.67      0.69      0.67      1731
+
+Bernoulli Accuracy: 0.6944
+Confusioin Matrix: [240 350 179 962]
+Classification Report:
+             precision    recall  f1-score   support
+
+     Female       0.57      0.41      0.48       590
+       Male       0.73      0.84      0.78      1141
+
+avg / total       0.68      0.69      0.68      1731
+
+---------------------------------------------------------------------
+Date: 11-29-2017
+Data Set: 12202
+X Tranining Set: 8541 ; X Test Set: 3661
+Y Tranining Set: 8541 ; Y Test Set: 3661
+
+Gaussian Accuracy: 0.6116
+Confusioin Matrix: [1168  751  671 1071]
+Classification Report:
+             precision    recall  f1-score   support
+
+     Female       0.64      0.61      0.62      1919
+       Male       0.59      0.61      0.60      1742
+
+avg / total       0.61      0.61      0.61      3661
+
+Bernoulli Accuracy: 0.6113
+Confusioin Matrix: [1144  775  648 1094]
+Classification Report:
+             precision    recall  f1-score   support
+
+     Female       0.64      0.60      0.62      1919
+       Male       0.59      0.63      0.61      1742
+
+avg / total       0.61      0.61      0.61      3661
