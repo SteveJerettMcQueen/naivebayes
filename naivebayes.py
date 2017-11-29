@@ -10,6 +10,7 @@ from util import load_data
 
 ################################################################################
 
+# Classification data
 dir_label = [
     ['badeer-r', 1], ['benson-r', 1], ['blair-l', 0],
     ['cash-m', 0], ['corman-s', 1], ['hain-m', 1]]
