@@ -11,6 +11,8 @@ from util import load_data
 ################################################################################
 
 # Classification data
+target_names=['Female', 'Male']
+
 dir_label = [
     ['badeer-r', 1], ['benson-r', 1], ['blair-l', 0],
     ['cash-m', 0], ['corman-s', 1], ['hain-m', 1]]
@@ -29,17 +31,17 @@ gauss = GaussianNB().fit(X_train, y_train)
 y_pred_gauss = gauss.predict(X_test)
 acc = metrics.accuracy_score(y_test, y_pred_gauss)
 cfm = metrics.confusion_matrix(y_test, y_pred_gauss)
-report = classification_report(y_test, y_pred_gauss)
+report = classification_report(y_test, y_pred_gauss, target_names=target_names)
     
 # Bernoulli
 bern = BernoulliNB().fit(X_train, y_train)
 y_pred_bern = bern.predict(X_test)
 acc2 = metrics.accuracy_score(y_test, y_pred_bern)
 cfm2 = metrics.confusion_matrix(y_test, y_pred_bern)
-report2 = classification_report(y_test, y_pred_bern)
+report2 = classification_report(y_test, y_pred_bern, target_names=target_names)
 
 # Write to file
-filename = 'results.txt'
+filename = 'dataset/results.txt'
 file_exists = os.path.exists(filename)
 append_write = 'a' if(file_exists) else 'w'
 f = open(filename, append_write)
